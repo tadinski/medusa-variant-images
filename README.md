@@ -17,12 +17,12 @@ npm i medusa-variant-images
 **To use this plugin, you need to have the minimum versions of the following dependencies:**
 
 ```json
-"@medusajs/admin-sdk": "2.4.0",
-"@medusajs/cli": "2.4.0",
-"@medusajs/framework": "2.4.0",
-"@medusajs/icons": "2.4.0",
-"@medusajs/js-sdk": "2.4.0",
-"@medusajs/medusa": "2.4.0",
+"@medusajs/admin-sdk": "2.7.0",
+"@medusajs/cli": "2.7.0",
+"@medusajs/framework": "2.7.0",
+"@medusajs/icons": "2.7.0",
+"@medusajs/js-sdk": "2.7.0",
+"@medusajs/medusa": "2.7.0",
 ```
 
 ## Usage
@@ -75,7 +75,7 @@ const images: Images[] | undefined = variant.metadata?.images;
 
 - Medusa Variant Images includes the ability to order your images and displays the number when you click on the images.
 - You can also upload images using a **base option**.  
-  For example: Let's say you have a clothing store. You can select the base option as colour and upload your images to all variants with its colour option set as *brown*, simultaneously.   
+  For example: Let's say you have a clothing store. You can select the base option as colour and upload your images to all variants with its colour option set as _brown_, simultaneously.  
   To do this, click the `3 dots` at the top right of the variant images section in your product.
 
 ## Bugs and Contributions

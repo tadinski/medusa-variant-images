@@ -16,6 +16,7 @@
     "plugin",
     "medusa-plugin-other",
     "medusa-plugin",
+    "medusa-plugin-integration",
     "medusa-v2",
     "variant-images"
   ],
