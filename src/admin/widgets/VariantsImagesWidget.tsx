@@ -43,11 +43,26 @@ const VariantsImagesWidget = ({ data }: DetailWidgetProps<AdminProduct>) => {
 
   const updateData = async ({ variants = false, options = false, product: _product = false }: UpdateData) => {
     if (variants) {
-      await fetchBackend(`/admin/products/${product.id}/variants?order=title`).then((res) => {
-        if (!res) return;
+      const limit = 50;
 
-        setProduct((prevProd) => ({ ...prevProd, variants: res.variants }));
-      });
+      async function fetchVariants(offset: number, accumulated: AdminProductVariant[]): Promise<AdminProductVariant[]> {
+        const res = await fetchBackend(
+          `/admin/products/${product.id}/variants?order=title&limit=${limit}&offset=${offset}`
+        );
+        if (!res) return accumulated;
+        
+        const { count, variants } = res;
+        const newAccumulated = accumulated.concat(variants);
+        
+        if (offset + limit < count) {
+          return await fetchVariants(offset + limit, newAccumulated);
+        }
+        
+        return newAccumulated;
+      }
+
+      const allVariants = await fetchVariants(0, []);
+      setProduct((prevProd) => ({ ...prevProd, variants: allVariants }));
     }
 
     if (options) {
