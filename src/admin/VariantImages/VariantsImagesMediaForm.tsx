@@ -69,7 +69,7 @@ const VariantsImagesMediaForm = ({
   return (
     <div className='flex size-full flex-col-reverse lg:grid lg:grid-cols-[1fr_560px]'>
       {fields.length > 0 ? (
-        <div className='bg-ui-bg-subtle size-full overflow-auto divide-y'>
+        <div className='bg-ui-bg-subtle size-full overflow-auto divide-y h-[100vh]'>
           <div className='p-6 flex flex-col space-y-1'>
             <h2>Uploads</h2>
             <p className='txt-small text-ui-fg-subtle'>
@@ -80,7 +80,7 @@ const VariantsImagesMediaForm = ({
               )}
             </p>
           </div>
-          <div className='grid h-fit auto-rows-auto grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-6 p-6'>
+          <div className='grid h-fit auto-rows-auto grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-6 p-6 pb-20'>
             {fields.map((field, index) => {
               return (
                 <Image
@@ -158,7 +158,7 @@ const Image = ({
         return (
           <button
             className={clx(
-              'relative shadow-elevation-card-rest hover:shadow-elevation-card-hover focus-visible:shadow-borders-focus bg-ui-bg-subtle-hover group aspect-square h-auto max-w-full overflow-hidden rounded-lg outline-none',
+              'relative w-full aspect-square shadow-elevation-card-rest hover:shadow-elevation-card-hover focus-visible:shadow-borders-focus bg-ui-bg-subtle-hover group overflow-hidden rounded-lg outline-none',
               {
                 'bg-grey-500': value.selected,
               }
